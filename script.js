@@ -6,6 +6,7 @@ constantClock = setInterval(function(){
 
     //Check the time
     currentHour = moment().format("H")
+    var currentHourNum = parseInt(currentHour)
     
     //Set Variables for before and after 
     var time = moment(currentHour,'H'), beforeTime = moment('09', 'H'), afterTime = moment('17', 'H');
@@ -38,14 +39,14 @@ constantClock = setInterval(function(){
         $("#hour-" + currentHour ).removeClass("future")
         
         //Take hours before and apply past class remove other classes
-        for(i = currentHour - 1; i >= 9; i--){
+        for(i = currentHourNum - 1; i >= 9; i--){
             $("#hour-" + i ).addClass("past")
             $("#hour-" + i ).removeClass("future")
             $("#hour-" + i ).removeClass("present")
         }
 
         //take after hours and apply future class remove other classes
-        for(i = currentHour + 1 ; i <= 17; i++){
+        for(i = currentHourNum + 1; i <= 17; i++){
             $("#hour-" + i).addClass("future")
             $("#hour-" + i ).removeClass("past")
             $("#hour-" + i ).removeClass("present")
