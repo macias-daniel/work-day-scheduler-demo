@@ -32,3 +32,7 @@ https://macias-daniel.github.io/work-day-scheduler-demo/
 ---
 * WHEN I refresh the page
 * THEN the saved events persist
+
+
+# API's used
+* moment.js:   https://momentjs.com/docs/
